@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+        table{
+            width: 100%;
+            text-align: center;
+        }
+        .one:hover{
+            animation-name: rollback;
+            animation-duration: 2s;
+            animation-direction:alternate;
+            animation-iteration-count: 6;
+            animation-timing-function:ease;
+        }
+        .two:hover{
+            animation-name: rollfront;
+            animation-duration: 2s;
+            animation-direction:alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        .three:hover{
+            animation-name: rolldown;
+            animation-duration: 3s;
+            animation-direction:alternate;
+            animation-iteration-count: 6;
+            animation-timing-function: ease;
+        }
+        @keyframes rollback{
+            40%{
+                transform: translateX(150px) rotate(180deg);
+            }
+            100%{
+                transform: translateX(300px) rotate(360deg);
+            }
+        }
+        @keyframes rollfront{
+            40%{
+                transform: translateX(-150px) rotate(180deg);
+            }
+            100%{
+                transform: translateX(-300px) rotate(360deg);
+            }    
+        }
+        @keyframes rolldown{
+            40%{
+                transform: translateY(150px) rotate(180deg);
+            }
+            100%{
+                transform: translateY(300px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Hover over the images to see rolling and rollback animations</h2>
+    <table >
+        <tr>
+            <td><h3>Image1</h3></td>
+            <td><img class="one" src="https://cdn.pixabay.com/photo/2024/04/20/17/17/ai-generated-8709127_640.png" width="200px" height="200px"></td>
+        </tr>
+        <tr>
+            <td><h3>Image2</h3></td>
+            <td><img class="two" src="https://m.media-amazon.com/images/I/514F+SpoKsL.jpg" width="200px" height="200px">
+            </td>
+        </tr>
+        <tr>
+            <td><h3>Image3</h3></td>
+            <td><img class="three" src="https://www.webby.toys/cdn/shop/products/71ozvZ3PRyS._SL1500.jpg?v=1674450480&width=1080" width="200px" height="200px"></td>
+        </tr>
+    </table>
+</body>
+</html>
